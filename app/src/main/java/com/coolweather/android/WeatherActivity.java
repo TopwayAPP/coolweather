@@ -41,6 +41,7 @@ public class WeatherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_weather);
         weatherLayout=(ScrollView)findViewById(R.id.weather_layout);
         titleCity=(TextView)findViewById(R.id.title_city);
+        titleUpdateTime=(TextView)findViewById(R.id.title_update_time);
         degreeText=(TextView)findViewById(R.id.degree_text);
         weatherInfoText=(TextView)findViewById(R.id.weather_info_text);
         forecastLayout=(LinearLayout)findViewById(R.id.forecast_layout);
@@ -54,6 +55,10 @@ public class WeatherActivity extends AppCompatActivity {
         if(weatherString!=null){
             Weather weather= Utility.handleWeatherResponse(weatherString);
             showWeatherInfo(weather);
+        }else {
+            String weatherId=getIntent().getStringExtra("weather_id");
+            weatherLayout.setVisibility(View.INVISIBLE);
+            requestWeather(weatherId);
         }
     }
 
