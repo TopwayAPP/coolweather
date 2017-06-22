@@ -23,11 +23,11 @@
              android:layout_alignParentLeft="true"
              android:layout_centerVertical="true"
              android:text="g"/>
-        <ListView
-            android:id="@+id/list_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+
 
     </RelativeLayout>
-
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>
